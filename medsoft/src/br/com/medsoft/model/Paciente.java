@@ -14,4 +14,7 @@ public class Paciente {
 	private String cpf;
 	private SexoType sexo;
 
+	private Endereco endereco;
+ 
+	private Contato contato;
 }
