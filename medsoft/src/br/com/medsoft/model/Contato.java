@@ -1,5 +1,7 @@
 package br.com.medsoft.model;
 
+import java.util.Objects;
+
 public class Contato {
 	private String email;
 	private String celular;
@@ -21,6 +23,25 @@ public class Contato {
 
 	public void setCelular(String celular) {
 		this.celular = celular;
+	}
+
+	
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(celular, email);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Contato other = (Contato) obj;
+		return Objects.equals(celular, other.celular) && Objects.equals(email, other.email);
 	}
 
 	@Override
